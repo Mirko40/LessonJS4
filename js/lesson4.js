@@ -19,7 +19,12 @@ function getFactorial(n) {
         return result;
     } else console.log(`Number < 0`);
 };
-
+function getNumber(a, b, c) {
+    a = String(a);
+    b = String(b);
+    c = String(c);
+    return Number(a + b + c)
+};
 
 
 
