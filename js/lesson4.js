@@ -25,10 +25,11 @@ function getNumber(a, b, c) {
     c = String(c);
     return Number(a + b + c)
 };
-
-
-
-
+function getSquare(a, b) {
+    if (b == undefined) {
+        return a * a;
+    } else return a * b
+};
 
 
 
