@@ -56,20 +56,35 @@ function getPerfect(a, b) {
 };
 
 function getTime(a, b, c) {
-    let h = a;
-    let m = b;
-    let s = c;
-    if (a == undefined) {
-        h = "00";
+    if (!a) {
+        a = "00";
     }
-    if (b == undefined) {
-        m = "00";
+    if (!b) {
+        b = "00";
     }
-    if (c == undefined) {
-        s = "00";
+    if (!c) {
+        c = "00";
     }
+    return a + ":" + b + ":" + c;
+}
+
+function getSecond(a = 0, b = 0, c = 0) {
+
+    return a * 3600 + b * 60 + c;
+}
+function showTime(a) {
+    let h = Math.trunc(a / 3600);
+    let m = Math.trunc((a - h * 3600) / 60);
+    let s = a - h * 3600 - m * 60;
     return h + ":" + m + ":" + s;
 }
 
-let a = getTime(5, 25)
-alert(a)
+function getDifferentDate(a, b, c, d, e, f) {
+    let res1 = getSecond(a, b, c)
+    let res2 = getSecond(d, e, f)
+    return showTime(res2 - res1)
+
+}
+
+let a = getDifferentDate()
+console.log(a)
