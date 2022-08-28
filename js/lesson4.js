@@ -30,7 +30,46 @@ function getSquare(a, b) {
         return a * a;
     } else return a * b
 };
+function isPerfect(n) {
+    let a = 0;
+    for (let i = 1; i <= n / 2; i++) {
+        if (n % i === 0) {
+            a += i;
+        }
+    }
+    if (a === n && a !== 0) {
+        return true;
+    }
+    else {
+        return false;
+    }
+};
+function getPerfect(a, b) {
+    let res = ""
+    while (a <= b) {
+        if (isPerfect(a)) {
+            res += a + " "
+        }
+        a++
+    }
+    return res
+};
 
+function getTime(a, b, c) {
+    let h = a;
+    let m = b;
+    let s = c;
+    if (a == undefined) {
+        h = "00";
+    }
+    if (b == undefined) {
+        m = "00";
+    }
+    if (c == undefined) {
+        s = "00";
+    }
+    return h + ":" + m + ":" + s;
+}
 
-
-
+let a = getTime(5, 25)
+alert(a)
